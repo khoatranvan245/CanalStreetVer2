@@ -1,6 +1,7 @@
 import './App.css'
+import Menu from './Components/Menu'
 const App = () => {
-  return <h1>hello</h1>
+  return <Menu/>
 }
 
 export default App

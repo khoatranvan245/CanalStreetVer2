@@ -1,0 +1,62 @@
+.menu{
+    display: flex;
+    justify-content: end;
+    height: 100vh;
+}
+
+.panel{
+    width: 60px;
+    height: 100%;
+    position: relative;
+    transition: width 0.2s ease;
+}
+.panelTwo{
+    background-color: var(--blue-color);
+}
+.panelThree{
+    background-color: var(--red-color);
+}
+.panelFour{
+    background-color: var(--orange-color);
+}
+
+.panelTag{
+    writing-mode: vertical-lr;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 22px;
+    transform: translateY(-50%);
+    transition: opacity 0.3s 0.3s ease;
+}
+.panelTagChinese{
+    font-size: 20px;
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    transition: opacity 0.3s 0.3s ease;
+}
+
+.panelLogo{
+    position: absolute;
+    top: 55px;
+}
+.panelLogo a svg{
+    display: block;
+    height: 50px;
+}
+
+.active{
+    width: calc(100% - 180px);
+    overflow: auto;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.active::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.active .panelTag, .active .panelTagChinese{
+    opacity: 0;
+}
