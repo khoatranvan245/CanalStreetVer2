@@ -8,7 +8,7 @@
     width: 60px;
     height: 100%;
     position: relative;
-    transition: width 0.2s ease;
+    transition: width 0.3s ease;
     color: black;
 }
 .panelTwo{
@@ -42,10 +42,13 @@
 .panelLogo{
     position: absolute;
     top: 55px;
+    left: 0px;
+    transition: left 0.3s ease;
 }
-.panelLogo a svg{
+.panelLogo div svg{
     display: block;
     height: 50px;
+    transition: height 0.3s ease;
 }
 
 .active{
@@ -66,7 +69,13 @@
 .content{
     display: none;
 }
-
 .active .content{
     display: block;
+}
+
+.active .panelLogo{
+    left: 55px;
+}
+.active .panelLogo div svg{
+    height: 60px;
 }

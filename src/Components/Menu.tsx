@@ -5,7 +5,6 @@ const Menu = () => {
     const setActivePanel = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         document.querySelector(`.${styles.active}`)?.classList.remove(styles.active)
         e.currentTarget.classList.add(styles.active)
-
     }
 
     return (
@@ -15,9 +14,7 @@ const Menu = () => {
                 onClick={(e) => setActivePanel(e)}
             >
                 <div className={styles.panelLogo}>
-                    <a
-                        href="/"
-                        className="logo js-logo"
+                    <div
                     >
                         <svg
                             width="60px"
@@ -165,7 +162,7 @@ const Menu = () => {
                                 </g>
                             </g>
                         </svg>
-                    </a>
+                    </div>
                 </div>
                 <div className={styles.content}>
                     <Outlet/>
