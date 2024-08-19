@@ -1,7 +1,8 @@
+import { Outlet,Link } from 'react-router-dom'
 import styles from './Menu.module.css'
 
 const Menu = () => {
-    const setActivePanel = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const setActivePanel = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         document.querySelector(`.${styles.active}`)?.classList.remove(styles.active)
         e.currentTarget.classList.add(styles.active)
 
@@ -9,7 +10,7 @@ const Menu = () => {
 
     return (
         <div className={styles.menu}>
-            <div
+            <Link to={'/'}
                 className={[styles.panel, styles.panelOne, styles.active].join(' ')}
                 onClick={(e) => setActivePanel(e)}
             >
@@ -166,28 +167,40 @@ const Menu = () => {
                         </svg>
                     </a>
                 </div>
-            </div>
-            <div
+                <div className={styles.content}>
+                    <Outlet/>
+                </div>
+            </Link>
+            <Link to={'/food'}
                 className={[styles.panel, styles.panelTwo].join(' ')}
                 onClick={(e) => setActivePanel(e)}
             >
                 <div className={styles.panelTagChinese}>餐饮</div>
                 <div className={styles.panelTag}>Food</div>
-            </div>
-            <div
+                <div className={styles.content}>
+                    <Outlet/>
+                </div>
+            </Link>
+            <Link to={'/retail'}
                 className={[styles.panel, styles.panelThree].join(' ')}
                 onClick={(e) => setActivePanel(e)}
             >
                 <div className={styles.panelTagChinese}>購物</div>
                 <div className={styles.panelTag}>Retail</div>
-            </div>
-            <div
+                <div className={styles.content}>
+                    <Outlet/>
+                </div>
+            </Link>
+            <Link to={'/community'}
                 className={[styles.panel, styles.panelFour].join(' ')}
                 onClick={(e) => setActivePanel(e)}
             >
                 <div className={styles.panelTagChinese}>文化</div>
                 <div className={styles.panelTag}>Community</div>
-            </div>
+                <div className={styles.content}>
+                    <Outlet/>
+                </div>
+            </Link>
         </div>
     )
 }

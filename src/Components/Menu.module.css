@@ -9,6 +9,7 @@
     height: 100%;
     position: relative;
     transition: width 0.2s ease;
+    color: black;
 }
 .panelTwo{
     background-color: var(--blue-color);
@@ -52,6 +53,7 @@
     overflow: auto;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
+    pointer-events: none;
 }
 .active::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
@@ -59,4 +61,12 @@
 
 .active .panelTag, .active .panelTagChinese{
     opacity: 0;
+}
+
+.content{
+    display: none;
+}
+
+.active .content{
+    display: block;
 }
