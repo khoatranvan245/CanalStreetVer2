@@ -134,7 +134,7 @@
     margin-bottom: 15px;
 }
 
-.marketEventSection .information .button{
+.marketEventSection .information .button {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -144,24 +144,78 @@
     height: 60px;
 }
 
+/*ADDRESS SECTION*/
+.address {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    margin-top: 100px;
+    padding: 0 55px;
+}
 
+.address a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 340px;
+
+    background-image: linear-gradient(90deg, #000 50%, transparent 0), linear-gradient(90deg, #000 50%, transparent 0), linear-gradient(180deg, #000 50%, transparent 0), linear-gradient(180deg, #000 50%, transparent 0);
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 30px 1px, 30px 1px, 1px 30px, 1px 30px;
+    animation: .4s infinite normal a;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+}
+
+.address a:hover {
+    animation-play-state: running;
+}
+
+.address a:first-child {
+    font-size: 60px;
+    font-family: 'ogg', sans-serif;
+    color: black;
+    text-decoration: none;
+}
+
+.address a:last-child {
+    padding: 3px;
+}
+
+.address a:last-child img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+@keyframes a {
+    0% {
+        background-position: 0 0, 0 100%, 0 0, 100% 0;
+    }
+
+    100% {
+        background-position: 30px 0, -30px 100%, 0 -30px, 100% 30px;
+    }
+}
 
 @keyframes b {
     0% {
-      background-position-x: 0, 2px;
+        background-position-x: 0, 2px;
     }
-  
+
     100% {
-      background-position-x: 17px, 19px;
+        background-position-x: 17px, 19px;
     }
-  }
-  
-  @keyframes c {
+}
+
+@keyframes c {
     0% {
-      background-position-x: 0, 0;
+        background-position-x: 0, 0;
     }
-  
+
     100% {
-      background-position-x: 24px, -24px;
+        background-position-x: 24px, -24px;
     }
-  }
+}
