@@ -1,0 +1,167 @@
+.container {
+    background-color: white;
+    padding-bottom: 200px;
+}
+
+/* INTRODUCTION SECTION */
+.introductionSection {
+    margin-top: 255px;
+    width: 75%;
+    font-size: 76px;
+    font-family: 'ogg', san-serif;
+    font-weight: 200;
+    padding-left: 55px;
+}
+
+.introductionSection h1 {
+    line-height: 85px;
+}
+
+.introductionSection h1 a {
+    color: black;
+    text-decoration: none;
+    background-image: repeating-linear-gradient(-45deg, #ffb400, #ffb400 1px, transparent 0, transparent 12px), repeating-linear-gradient(45deg, #ffb400, #ffb400 1px, transparent 0, transparent 12.2px);
+    background-position: 0 103%, 2px 103%;
+    background-size: 17px 10px;
+    background-repeat: repeat-x;
+    animation: .8s infinite normal b;
+    animation-timing-function: linear;
+}
+
+/*HERO SECTION*/
+.imageHero {
+    margin-top: 100px;
+    background-image: url('https://images.prismic.io/canalstreetmarket/1d99cf0e3a0144c1229f92ee5b3c63b0eaae893c_home-hero.jpg?auto=compress,format');
+    width: 100%;
+    height: 900px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*A NEW KIND SECTION*/
+.aNewKindSection {
+    margin-top: 100px;
+    padding: 0 55px;
+}
+
+.aNewKindSection h1 {
+    font-family: 'ogg', sans-serif;
+    font-size: 113px;
+    width: 700px;
+    line-height: 130px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-top: 56px;
+}
+
+.gallery .block .image {
+    aspect-ratio: 17/23;
+    width: 100%;
+    background-size: cover;
+}
+
+.gallery .block:first-child .image {
+    background-image: url('https://images.prismic.io/canalstreetmarket/8f74dfabde9ebd66d0d078ba6cf794c77dc8ac5b_home_page_one.jpg?auto=compress,format');
+}
+
+.gallery .block:nth-child(2) .image {
+    background-image: url('https://images.prismic.io/canalstreetmarket/20c7997073b456fda0e6de872d23b6183892bdde_home_page_two.jpg?auto=compress,format');
+}
+
+.gallery .block:nth-child(3) .image {
+    background-image: url('https://images.prismic.io/canalstreetmarket/13a988aff3e9c672350fe8330eb7386c3a85eeb9_home_page_three.jpg?auto=compress,format');
+}
+
+.gallery .block .description {
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+/*Market Event Section*/
+.marketEventSection {
+    margin-top: 100px;
+    padding: 0 55px;
+}
+
+.marketEventSection .title {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 40px;
+}
+
+.marketEventSection .title .block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marketEventSection .title .block h1 {
+    font-size: 100px;
+    font-family: 'ogg', sans-serif;
+    text-align: center;
+}
+
+.marketEventSection .information {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 90px;
+    position: relative;
+    padding: 75px 0 100px;
+    background-image: linear-gradient(90deg, #000 50%, transparent 0), linear-gradient(90deg, #000 50%, transparent 0), linear-gradient(90deg, #000 50%, transparent 0), linear-gradient(90deg, #000 50%, transparent 0);
+    background-position: 0 0, 0 100%, left 14px, 0 calc(100% - 14px);
+    background-repeat: repeat-x, repeat-x, repeat-x, repeat-x;
+    background-size: 24px 1px, 24px 1px, 24px 1px, 24px 1px;
+    animation: .8s infinite normal c;
+    animation-timing-function: linear;
+
+}
+
+.marketEventSection .information .block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.marketEventSection .information .block .time {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.marketEventSection .information .button{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    background-color: white;
+    width: 180px;
+    height: 60px;
+}
+
+
+
+@keyframes b {
+    0% {
+      background-position-x: 0, 2px;
+    }
+  
+    100% {
+      background-position-x: 17px, 19px;
+    }
+  }
+  
+  @keyframes c {
+    0% {
+      background-position-x: 0, 0;
+    }
+  
+    100% {
+      background-position-x: 24px, -24px;
+    }
+  }

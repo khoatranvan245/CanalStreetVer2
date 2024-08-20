@@ -2,14 +2,14 @@ import { Outlet,Link } from 'react-router-dom'
 import styles from './Menu.module.css'
 
 const Menu = () => {
-    const setActivePanel = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    const setActivePanel = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
         document.querySelector(`.${styles.active}`)?.classList.remove(styles.active)
         e.currentTarget.classList.add(styles.active)
     }
 
     return (
         <div className={styles.menu}>
-            <Link to={'/'}
+            <div
                 className={[styles.panel, styles.panelOne, styles.active].join(' ')}
                 onClick={(e) => setActivePanel(e)}
             >
@@ -167,8 +167,10 @@ const Menu = () => {
                 <div className={styles.content}>
                     <Outlet/>
                 </div>
-            </Link>
-            <Link to={'/food'}
+
+                <Link to={'/'} className={styles.link}></Link>
+            </div>
+            <div
                 className={[styles.panel, styles.panelTwo].join(' ')}
                 onClick={(e) => setActivePanel(e)}
             >
@@ -177,8 +179,10 @@ const Menu = () => {
                 <div className={styles.content}>
                     <Outlet/>
                 </div>
-            </Link>
-            <Link to={'/retail'}
+
+                <Link to={'/food'} className={styles.link}></Link>
+            </div>
+            <div
                 className={[styles.panel, styles.panelThree].join(' ')}
                 onClick={(e) => setActivePanel(e)}
             >
@@ -187,8 +191,10 @@ const Menu = () => {
                 <div className={styles.content}>
                     <Outlet/>
                 </div>
-            </Link>
-            <Link to={'/community'}
+
+                <Link to={'/retail'} className={styles.link}></Link>
+            </div>
+            <div
                 className={[styles.panel, styles.panelFour].join(' ')}
                 onClick={(e) => setActivePanel(e)}
             >
@@ -197,7 +203,8 @@ const Menu = () => {
                 <div className={styles.content}>
                     <Outlet/>
                 </div>
-            </Link>
+                <Link to={'/community'} className={styles.link}></Link>
+            </div>
         </div>
     )
 }
