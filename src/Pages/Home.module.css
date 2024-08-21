@@ -5,15 +5,15 @@
 /* INTRODUCTION SECTION */
 .introductionSection {
     margin-top: 255px;
-    width: 75%;
     font-size: 76px;
     font-family: 'ogg', san-serif;
-    font-weight: 200;
-    padding-left: 55px;
+    padding: 0 55px;
 }
 
 .introductionSection h1 {
     line-height: 85px;
+    width: 75%;
+
 }
 
 .introductionSection h1 a {
@@ -32,8 +32,8 @@
     margin-top: 100px;
     background-image: url('https://images.prismic.io/canalstreetmarket/1d99cf0e3a0144c1229f92ee5b3c63b0eaae893c_home-hero.jpg?auto=compress,format');
     width: 100%;
-    height: 900px;
-    background-size: cover;
+    aspect-ratio: 720/453;
+    background-size: 100%;
     background-repeat: no-repeat;
 }
 
@@ -157,7 +157,6 @@
     align-items: center;
     justify-content: center;
     height: 340px;
-
     background-image: linear-gradient(90deg, #000 50%, transparent 0), linear-gradient(90deg, #000 50%, transparent 0), linear-gradient(180deg, #000 50%, transparent 0), linear-gradient(180deg, #000 50%, transparent 0);
     background-position: 0 0, 0 100%, 0 0, 100% 0;
     background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
@@ -176,6 +175,7 @@
     font-family: 'ogg', sans-serif;
     color: black;
     text-decoration: none;
+    text-align: center;
 }
 
 .address a:last-child {
@@ -216,5 +216,82 @@
 
     100% {
         background-position-x: 24px, -24px;
+    }
+}
+
+
+
+@media (max-width: 900px) {
+    .introductionSection {
+        margin-top: 150px;
+        font-size: 35px;
+        padding: 0 30px;
+    }
+
+    .introductionSection h1 {
+        width: 100%;
+        line-height: 40px;
+    }
+
+    .imageHero {
+        margin-top: 50px;
+    }
+
+    .aNewKindSection {
+        margin-top: 50px;
+        padding: 0 20px;
+    }
+
+    .aNewKindSection h1 {
+        font-size: 60px;
+    }
+
+    .aNewKindSection .gallery {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+    }
+
+    .marketEventSection {
+        margin-top: 50px;
+        padding: 0 20px;
+    }
+
+    .marketEventSection .title {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .marketEventSection .title .block h1 {
+        font-size: 60px;
+    }
+
+    .marketEventSection .information {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 45px 0 70px;
+    }
+
+    .address {
+        margin-top: 50px;
+        padding: 0 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .address a {
+        height: 225px;
+    }
+
+    .address a:first-child {
+        font-size: 40px;
+    }
+
+    .address a:last-child {
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    .aNewKindSection h1 {
+        font-size: 40px;
     }
 }

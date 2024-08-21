@@ -106,3 +106,14 @@
 .active .link{
     display: none;
 }
+
+/*Mobile Menu*/
+
+@media (max-width: 900px){
+    .panel:not(.active){
+        display: none;
+    }
+    .active{
+        width: 100%;
+    }
+}
