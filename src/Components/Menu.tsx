@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation } from 'react-router-dom'
 import styles from './Menu.module.css'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const Menu = () => {
     const pathName = useLocation().pathname
@@ -184,9 +184,7 @@ const Menu = () => {
                         </svg>
                     </div>
                 </div>
-                <div className={styles.content}>
-                    <Outlet />
-                </div>
+                <div className={styles.content}>{pathName == '/' ? <Outlet /> : <></>}</div>
 
                 <Link
                     to={'/'}
@@ -199,9 +197,7 @@ const Menu = () => {
             >
                 <div className={styles.panelTagChinese}>餐饮</div>
                 <div className={styles.panelTag}>Food</div>
-                <div className={styles.content}>
-                    <Outlet />
-                </div>
+                <div className={styles.content}>{pathName == '/food' ? <Outlet /> : <></>}</div>
 
                 <Link
                     to={'/food'}
@@ -214,9 +210,7 @@ const Menu = () => {
             >
                 <div className={styles.panelTagChinese}>購物</div>
                 <div className={styles.panelTag}>Retail</div>
-                <div className={styles.content}>
-                    <Outlet />
-                </div>
+                <div className={styles.content}>{pathName == '/retail' ? <Outlet /> : <></>}</div>
 
                 <Link
                     to={'/retail'}
@@ -229,9 +223,7 @@ const Menu = () => {
             >
                 <div className={styles.panelTagChinese}>文化</div>
                 <div className={styles.panelTag}>Community</div>
-                <div className={styles.content}>
-                    <Outlet />
-                </div>
+                <div className={styles.content}>{pathName == '/community' ? <Outlet /> : <></>}</div>
                 <Link
                     to={'/community'}
                     className={styles.link}
