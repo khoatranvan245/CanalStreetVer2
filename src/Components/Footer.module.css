@@ -1,0 +1,115 @@
+.footer {
+    margin-top: 100px;
+    padding: 0 55px;
+}
+
+/*Vendor section*/
+.vendor {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+}
+
+.vendor h1 {
+    font-family: 'ogg', sans-serif;
+    font-size: 45px;
+}
+
+.vendor .button {
+    margin-top: 30px;
+    height: 45px;
+    width: 180px;
+}
+
+/*Social Media secion*/
+.socialMedia {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.socialMedia .block {
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.socialMedia .block i {
+    font-size: 30px;
+}
+
+.socialMedia .block p {
+    font-size: 14px;
+}
+
+/*Form section*/
+.form {
+    margin-top: 50px;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 60px;
+}
+
+.form p{
+    font-size: 22px;
+}
+
+.form input {
+    width: 860px;
+    border: 1px solid black;
+    padding: 20px 30px;
+    font-family: 'Apercu Mono Pro', sans-serif;
+    font-size: 14px;
+}
+
+.form input::placeholder{
+    color: black;
+}
+
+/*Policy section*/
+.policy{
+    margin-top: 30px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}   
+.policy a{
+    color: black;
+    margin-left: 40px;
+}
+
+
+.block {
+    background-image: linear-gradient(90deg, #000 50%, transparent 0), linear-gradient(90deg, #000 50%, transparent 0), linear-gradient(180deg, #000 50%, transparent 0), linear-gradient(180deg, #000 50%, transparent 0);
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 30px 1px, 30px 1px, 1px 30px, 1px 30px;
+    animation: .4s infinite normal a;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+}
+
+.block:hover {
+    animation-play-state: running;
+}
+
+@keyframes a {
+    0% {
+        background-position: 0 0, 0 100%, 0 0, 100% 0;
+    }
+
+    100% {
+        background-position: 30px 0, -30px 100%, 0 -30px, 100% 30px;
+    }
+}

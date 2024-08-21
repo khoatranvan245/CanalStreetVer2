@@ -1,6 +1,5 @@
 .container {
     background-color: white;
-    padding-bottom: 200px;
 }
 
 /* INTRODUCTION SECTION */
@@ -180,7 +179,7 @@
 }
 
 .address a:last-child {
-    padding: 3px;
+    padding: 1px;
 }
 
 .address a:last-child img {

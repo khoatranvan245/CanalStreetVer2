@@ -1,21 +1,41 @@
-import { Outlet,Link } from 'react-router-dom'
+import { Outlet, Link, useLocation } from 'react-router-dom'
 import styles from './Menu.module.css'
+import { useEffect, useRef } from 'react'
 
 const Menu = () => {
-    const setActivePanel = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    const pathName = useLocation().pathname
+
+    const panelOneRef = useRef<HTMLDivElement>(null)
+    const panelTwoRef = useRef<HTMLDivElement>(null)
+    const panelThreeRef = useRef<HTMLDivElement>(null)
+    const panelFourRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
         document.querySelector(`.${styles.active}`)?.classList.remove(styles.active)
-        e.currentTarget.classList.add(styles.active)
-    }
+        switch (pathName) {
+            case '/':
+                panelOneRef.current!.classList.add(styles.active)
+                break
+            case '/food':
+                panelTwoRef.current!.classList.add(styles.active)
+                break
+            case '/retail':
+                panelThreeRef.current!.classList.add(styles.active)
+                break
+            case '/community':
+                panelFourRef.current!.classList.add(styles.active)
+                break
+        }
+    }, [pathName])
 
     return (
         <div className={styles.menu}>
             <div
                 className={[styles.panel, styles.panelOne, styles.active].join(' ')}
-                onClick={(e) => setActivePanel(e)}
+                ref={panelOneRef}
             >
                 <div className={styles.panelLogo}>
-                    <div
-                    >
+                    <div>
                         <svg
                             width="60px"
                             height="60px"
@@ -165,45 +185,57 @@ const Menu = () => {
                     </div>
                 </div>
                 <div className={styles.content}>
-                    <Outlet/>
+                    <Outlet />
                 </div>
 
-                <Link to={'/'} className={styles.link}></Link>
+                <Link
+                    to={'/'}
+                    className={styles.link}
+                ></Link>
             </div>
             <div
                 className={[styles.panel, styles.panelTwo].join(' ')}
-                onClick={(e) => setActivePanel(e)}
+                ref={panelTwoRef}
             >
                 <div className={styles.panelTagChinese}>餐饮</div>
                 <div className={styles.panelTag}>Food</div>
                 <div className={styles.content}>
-                    <Outlet/>
+                    <Outlet />
                 </div>
 
-                <Link to={'/food'} className={styles.link}></Link>
+                <Link
+                    to={'/food'}
+                    className={styles.link}
+                ></Link>
             </div>
             <div
                 className={[styles.panel, styles.panelThree].join(' ')}
-                onClick={(e) => setActivePanel(e)}
+                ref={panelThreeRef}
             >
                 <div className={styles.panelTagChinese}>購物</div>
                 <div className={styles.panelTag}>Retail</div>
                 <div className={styles.content}>
-                    <Outlet/>
+                    <Outlet />
                 </div>
 
-                <Link to={'/retail'} className={styles.link}></Link>
+                <Link
+                    to={'/retail'}
+                    className={styles.link}
+                ></Link>
             </div>
             <div
                 className={[styles.panel, styles.panelFour].join(' ')}
-                onClick={(e) => setActivePanel(e)}
+                ref={panelFourRef}
             >
                 <div className={styles.panelTagChinese}>文化</div>
                 <div className={styles.panelTag}>Community</div>
                 <div className={styles.content}>
-                    <Outlet/>
+                    <Outlet />
                 </div>
-                <Link to={'/community'} className={styles.link}></Link>
+                <Link
+                    to={'/community'}
+                    className={styles.link}
+                ></Link>
             </div>
         </div>
     )
