@@ -103,17 +103,27 @@
     height: 100%;
 }
 
-.active .link{
+.active .link {
+    display: none;
+}
+
+.mobileMenu {
     display: none;
 }
 
 /*Mobile Menu*/
 
-@media (max-width: 900px){
-    .panel:not(.active){
+@media (max-width: 900px) {
+    .panel:not(.active) {
         display: none;
     }
-    .active{
+
+    .active {
         width: 100%;
+    }
+
+    .active .panelLogo {
+        left: 30px;
+        position: fixed;
     }
 }
