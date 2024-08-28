@@ -73,6 +73,10 @@
     font-family: 'Apercu Mono Pro', sans-serif;
     font-size: 14px;
     width: 60%;
+    background-color: inherit;
+}
+.form input:focus{
+    box-shadow: none;
 }
 
 .form input::placeholder{
