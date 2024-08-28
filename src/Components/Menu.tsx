@@ -10,6 +10,11 @@ const Menu = () => {
     const panelTwoRef = useRef<HTMLDivElement>(null)
     const panelThreeRef = useRef<HTMLDivElement>(null)
     const panelFourRef = useRef<HTMLDivElement>(null)
+    const content = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        content.current!.scrollTop = 0
+    }, [pathName])
 
     useEffect(() => {
         document.querySelector(`.${styles.active}`)?.classList.remove(styles.active)
@@ -186,7 +191,7 @@ const Menu = () => {
                             </svg>
                         </div>
                     </div>
-                    <div className={styles.content}>{pathName == '/' ? <Outlet /> : <></>}</div>
+                    <div className={styles.content} ref={content}>{pathName == '/' ? <Outlet /> : <></>}</div>
 
                     <Link
                         to={'/'}
@@ -199,7 +204,7 @@ const Menu = () => {
                 >
                     <div className={styles.panelTagChinese}>餐饮</div>
                     <div className={styles.panelTag}>Food</div>
-                    <div className={styles.content}>{pathName == '/food' ? <Outlet /> : <></>}</div>
+                    <div className={styles.content} ref={content}>{pathName == '/food' ? <Outlet /> : <></>}</div>
 
                     <Link
                         to={'/food'}
@@ -212,7 +217,7 @@ const Menu = () => {
                 >
                     <div className={styles.panelTagChinese}>購物</div>
                     <div className={styles.panelTag}>Retail</div>
-                    <div className={styles.content}>
+                    <div className={styles.content} ref={content}>
                         {pathName == '/retail' ? <Outlet /> : <></>}
                     </div>
 
@@ -227,7 +232,7 @@ const Menu = () => {
                 >
                     <div className={styles.panelTagChinese}>文化</div>
                     <div className={styles.panelTag}>Community</div>
-                    <div className={styles.content}>
+                    <div className={styles.content} ref={content}>
                         {pathName == '/community' ? <Outlet /> : <></>}
                     </div>
                     <Link

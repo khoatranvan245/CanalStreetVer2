@@ -1,7 +1,9 @@
+
 import Footer from '../Components/Footer'
 import styles from './Food.module.css'
 
 const Food = () => {
+
     return (
         <div className={styles.container}>
             <section className={styles.hero}>

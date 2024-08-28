@@ -1,0 +1,196 @@
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 165px;
+}
+
+/*Hero Section*/
+.hero{
+    display: flex;
+    padding: 0 55px;
+    margin-bottom: 100px;
+}
+.hero .left{
+    flex: 1;
+}
+.hero .right{
+    flex: 1;
+}
+.hero .left p{
+    font-size: 16px;
+    writing-mode: vertical-lr;
+    opacity: 0.35;
+}
+.hero .left h1{
+    font-size: 200px;
+    font-family: 'ogg', sans-serif;
+    width: 50%;
+    margin-top: 50px;
+}
+.hero .right p{
+    width: 100%;
+    text-align: right;
+}
+.hero .right .imageContainer{
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+}
+.hero .right .imageContainer span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 60px;
+    z-index: 3;
+}
+.hero .right .imageContainer .image{
+    background-image: url('https://images.prismic.io/canalstreetmarket/13a988aff3e9c672350fe8330eb7386c3a85eeb9_home_page_three.jpg?auto=compress,format');
+    background-size: 100%;
+    width: 370px;
+    aspect-ratio: 17/23;
+    margin-left: auto;
+}
+
+/*Food List Section*/
+.foodList{
+    padding: 0 55px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    row-gap: 100px;
+    margin-bottom: 100px;
+}
+
+.foodList .food{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.foodList .food .place{
+    font-size: 32px;
+    font-family: 'ogg', sans-serif;
+}
+
+/*Slogan Section*/
+.slogan{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 110px 0;
+    margin: 0 55px;
+    background-image: repeating-linear-gradient(-45deg, #000, #000 1px, transparent 0, transparent 68px), repeating-linear-gradient(45deg, #000, #000 1px, transparent 0, transparent 68px), repeating-linear-gradient(-45deg, #000, #000 1px, transparent 0, transparent 71px), repeating-linear-gradient(45deg, #000, #000 1px, transparent 0, transparent 70px);
+    background-position: 0 101%, 0 101%, 0 0, 0 0;
+    background-size: 93px 50px, 93px 50px, 100px 50px, 100px 50px;
+    background-repeat: repeat-x;
+    animation: 2s infinite normal e;
+    animation-timing-function: linear;
+}
+
+.slogan .icon, .slogan .mainText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.slogan .icon svg{
+    width: 177px;
+    display: block;
+    animation: 1s infinite upDown alternate linear;
+}
+.rotate{
+    transform: rotate(180deg);
+}
+
+.slogan .mainText p:first-child{
+    font-size: 100px;
+    font-family: 'ogg', sans-serif;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1200px) and (min-width: 901px){
+    .hero .left h1{
+        font-size: 150px;
+    }
+    .hero .right .imageContainer .image{
+        width: 300px;
+    }
+}
+
+@media (max-width: 900px){
+    .container{
+        margin-top: 130px;
+    }
+    .hero{
+        flex-direction: column;
+        position: relative;
+        padding: 0 30px;
+    }
+    
+    .hero .left{
+        position: absolute;
+        top: 50px;
+    }
+    .hero .left h1{
+        font-size: 60px;
+        width: 100%;
+    }
+    .hero .left p{
+        display: none;
+    }
+
+    .hero .right .imageContainer{
+        margin-top: 150px;
+    }
+    .hero .right .imageContainer .image{
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .foodList {
+        padding: 0 30px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .foodList .food{
+        gap: 10px;
+    }
+
+    .slogan{
+        margin: 0 30px;
+        grid-template-columns: 1fr;
+        gap: 90px;
+    }
+
+    .slogan .mainText p:first-child{
+        font-size: 50px;
+    }
+    
+    .slogan .icon svg{
+        width: 80px;
+    }
+
+
+}
+
+
+
+@keyframes upDown{
+    0%{
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translateY(-30px);
+    }
+}
+@keyframes e{
+    0% {
+        background-position: 0 101%, 0 101%, 0 0, 0 0;
+    }
+    100% {
+        background-position: 93px 101%, 93px 101%, 100px 0, 100px 0;
+    }
+}
+
