@@ -17,7 +17,6 @@ const Food = () => {
                         Mon - Sun: 11:00AM - 8:00PM
                     </p>
                     <div className={styles.imageContainer}>
-                        <span>餐饮</span>
                         <div className={styles.image}></div>
                     </div>
                 </div>
