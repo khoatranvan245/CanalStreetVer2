@@ -1,0 +1,119 @@
+.container{
+    margin-top: 165px;
+    width: 100%;
+}
+
+/*Hero Section*/
+.hero{
+    display: flex;
+    padding: 0 55px;
+}
+.hero .left{
+    width: 80%;
+}
+.hero .right{
+    width: 20%;
+}
+.hero .left span{
+    font-size: 16px;
+    writing-mode: vertical-lr;
+    opacity: 0.35;
+}
+.hero .left h1{
+    font-size: 200px;
+    font-family: 'ogg', sans-serif;
+}
+
+.hero .right p{
+    text-align: right;
+    line-height: 17px;
+}
+.hero .right span{
+    display: block;
+    width: 100%;
+    font-size: 50px;
+    margin-top: 40px;
+    padding-left: 40px;
+}
+
+/*Event Section*/
+.events{
+    padding: 0 55px;
+    margin-bottom: 100px;
+}
+.eventsList{
+    display: grid;
+    margin-top: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 60px;
+}
+.event{
+    padding: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.eventTag{
+    grid-column: 2/3;
+    grid-row: 1/-1;
+    font-size: 100px;
+    font-family: 'ogg', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.button{
+    width: 100%;
+    height: 50px;
+}
+
+/*Features Section*/
+.features{
+    padding: 0 55px;
+    margin-bottom: 100px;
+}
+.title{
+    font-family: 'ogg', sans-serif;
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+.featuresList{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+.item .picture{
+    background-position: 100%;
+    background-size: cover;
+    width: 100%;
+    height: 330px;
+}
+
+.item:nth-child(1) .picture{
+    background-image: url('https://images.prismic.io/canalstreetmarket/ad63bd2481b47c4b95e0ce8eb265658541ace7f4_001-1-1.jpg?auto=compress,format');
+}
+.item:nth-child(2) .picture, .item:nth-child(3) .picture{
+    background-image: url('https://images.prismic.io/canalstreetmarket/b41fd97ada7c19360a17c6007020ddcc3aba6b6f_002-1.jpg?auto=compress,format');
+}
+.item:nth-child(4) .picture{
+    background-image: url('https://images.prismic.io/canalstreetmarket/fe8a44c7efc3e71cd5443ec833069561bd3ff1a7_01-1.jpg?auto=compress,format');
+}
+
+.name{
+    background-color: white;
+    font-size: 30px;
+    font-family: 'ogg', sans-serif;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.features .button{
+    margin-top: 70px;
+}
